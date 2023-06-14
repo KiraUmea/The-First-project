@@ -16,21 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from myapp import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('about/', include('myapp.urls')),
-    # path('/', name='/'),
-    # path('<slug>/', include('/<slug>/')),
-    # path('<slug>/comment/', include('/<slug>/comment/')),
-    # path('create/', include('/create/')),
-    # path('<slug>/update/', include('/<slug>/update/')),
-    # path('<slug>/delete/', include('/<slug>/delete/')),
-    # path('profile/<username>/', include('/profile/<username>/')),
-    # path('change_password/', include('/change_password/')),
-    # path('register/', include('/register/')),
-    # path('login/', include('/login/')),
-    # path('logout/', include('/logout/'))
+    path('', views.index, name='index'),
+    # path('', views.first, name='first'),
+    # path('admin/', admin.site.urls),
+    # path('blogs/', views.blogs),
+    # path('about/', views.about, include('/about/')),
+    # path('/', views.slash, name='/'),
+    # path('<slug>/', views.slug, include('/<slug>/')),
+    # path('<slug>/comment/', views.slug_comment, include('/<slug>/comment/')),
+    # path('create/', views.create, include('/create/')),
+    # path('<slug>/update/', views.slug_update, include('/<slug>/update/')),
+    # path('<slug>/delete/', views.slug_delete, include('/<slug>/delete/')),
+    # path('profile/<username>/', views.profile_username, include('/profile/<username>/')),
+    # path('change_password/', views.change_password, include('/change_password/')),
+    # path('register/', views.register, include('/register/')),
+    # path('login/', views.login, include('/login/')),
+    # path('logout/', views.logout, include('/logout/'))
 ]
 
