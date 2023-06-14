@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        {% for item in my_list %}
+        <span>{{ item }}</span>
+        <br>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="{% url 'first' %}">Another page</a>
+    </div>
+</body>
+</html>
