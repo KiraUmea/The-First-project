@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+</head>
+
+<body>
+    {% block content %}
+    <div>
+        <form>
+            <input type="text" name="Nickname"><br>
+            <input type="password" name="Password"><br>
+            <input type="submit" value="Log in">
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

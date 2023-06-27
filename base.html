@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="lavender">
+<div style="padding: 18px; background-color: ghostwhite">
+     <button style="padding: 4px; background-color: azure>
+      <a href="{% url 'main' %}">Main</a></button>
+     <button style="padding: 4px; background-color: azure">
+    <a href="{% url 'create blog' %}">Create new blog</a></button>
+    <button style="padding: 4px; background-color: azure">
+        <a href="{% url 'all_posts' %}">All posts</a></button>
+     <button style="padding: 4px; background-color: azure">
+    <a href="{% url 'create' %}">Create new post</a></button>
+</div>
+<div>
+    {% block content %}
+
+    {% endblock %}
+</div>
+</body>
+</html>
