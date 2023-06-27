@@ -1,36 +1,26 @@
-"""
-URL configuration for firstproject project.
+from django.urls import path, include
+from . import views
+from . import admin
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import include, path
+
+admin.site.site_header = 'Админка'
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('about/', include('myapp.urls')),
-    # path('/', name='/'),
-    # path('<slug>/', include('/<slug>/')),
-    # path('<slug>/comment/', include('/<slug>/comment/')),
-    # path('create/', include('/create/')),
-    # path('<slug>/update/', include('/<slug>/update/')),
-    # path('<slug>/delete/', include('/<slug>/delete/')),
-    # path('profile/<username>/', include('/profile/<username>/')),
-    # path('change_password/', include('/change_password/')),
-    # path('register/', include('/register/')),
-    # path('login/', include('/login/')),
-    # path('logout/', include('/logout/'))
+    path('admin/', views.admin, name='admin'),
+    path('', views.blogs, name='blogs'),
+    path('/about/', views.about, name='about'),
+    path('/', views.slash, name='slash'),
+    path('/<slug>/', views.slug, name='slug'),
+    path('/<slug>/comment/', views.slug_comment, name='slug_comment'),
+    path('/create/', views.create, name='create'),
+    path('/<slug>/update/', views.slug_update, name='slug_update'),
+    path('/<slug>/delete/', views.slug_delete, name='slug_delete'),
+    path('/profile/<username>/', views.profile_username, name='profile_username'),
+    path('/change_password/', views.change_password, name='change_password'),
+    path('/registration/', views.registration, name='registration'),
+    path('/login/', views.login, name='login'),
+    path('/logout/', views.logout, name='logout'),
+    path('main', views.main, name='main'),
+    path('create blog', views.create_blog, name='create blog')
 ]
-
