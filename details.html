@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div>
+    <meta charset="UTF-8">
+    <h3>{{post.title}}</h3>
+    <button style="padding: 4px; background-color: azure">
+        <a href="{% url 'create_comment' %}">New comment</a></button>
+    <p>Comments:</p>
+    {% for com in comment %}
+        <div>
+            <p>{{com.content}}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

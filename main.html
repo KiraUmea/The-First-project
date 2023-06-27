@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+{% for post in posts %}
+<div>
+    <h1>{{post.title}}</h1>
+    <p>{{post.author}}</p>
+    <a href="{% url 'get_post' post.slug %}">Go to post {{post.title}} </a>
+</div>
+{% endfor %}
+</body>
